@@ -24,6 +24,8 @@ import Route from '@ioc:Adonis/Core/Route';
 Route.get('/', 'AuthController.home');
 Route.post('/signup', 'AuthController.signup');
 Route.post('/login', 'AuthController.login');
+Route.post('/db', 'BoatGoalsController.save');
+
 
 Route.group(() => {
     Route.get('/me', 'UsersController.me');
@@ -33,7 +35,6 @@ Route.group(() => {
 }).middleware(['auth']);
 
 Route.post('/todo/add', 'TodosController.add');
-
 
 
 //db routes

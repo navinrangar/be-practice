@@ -9,8 +9,11 @@ import jwt from 'jsonwebtoken';
 
 
 export default class AuthController {
+
     public async signup(ctx: HttpContextContract) {
         const data = await ctx.request.validate(SignupValidator);
+        // console.log('data', data);
+
         return await User.create(data);
         // const loginHash = await Hash.make(data.password);
         // return await User.create({ ...data, password: loginHash });
